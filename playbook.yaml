@@ -1,0 +1,20 @@
+---
+- name: running reboot and ping modules #optional
+  hosts: webservers #list of hosts
+  gather_facts: false
+  become: true
+  tasks:
+    - name: reboot all hosts in webservers group #optional
+      reboot:
+
+    - name: check if python is available on webservers group
+      ping:                   
+      
+
+- name: second play begins here
+  hosts: localhost
+  gather_facts: false
+  become: false
+  tasks:
+    - ping:
+...
