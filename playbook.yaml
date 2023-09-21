@@ -4,8 +4,10 @@
   gather_facts: false
   become: true
   tasks:
-    - name: reboot all hosts in webservers group #optional
-      reboot:
+    - name: install httpd
+      yum:
+        name: httpd
+        state: present
 
     - name: check if python is available on webservers group
       ping:                   
